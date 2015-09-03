@@ -1,0 +1,21 @@
+{
+  "name": "jsfile-shemas",
+  "version": "1.0.0",
+  "description": "JSON schemas for jsFile library",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsFile/jsFile-schemas.git"
+  },
+  "keywords": [
+    "jsFile",
+    "schema",
+    "json"
+  ],
+  "author": "webschik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jsFile/jsFile-schemas/issues"
+  },
+  "homepage": "https://github.com/jsFile/jsFile-schemas"
+}
