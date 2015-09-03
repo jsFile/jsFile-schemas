@@ -1,6 +1,6 @@
 {
-  "name": "jsfile-shemas",
-  "version": "1.0.0",
+  "name": "jsfile-schemas",
+  "version": "1.0.2",
   "description": "JSON schemas for jsFile library",
   "main": "index.js",
   "repository": {

@@ -1,4 +1,4 @@
-{
+module.exports = {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "array",
     "description": "A schema of jDoc document",
@@ -105,4 +105,4 @@
             "additionalProperties": false
         }
     }
-}
+};

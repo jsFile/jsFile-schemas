@@ -1,3 +1,3 @@
 module.exports = {
-    document: require('src/document.json')
+    document: require('./src/document')
 };
