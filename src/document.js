@@ -1,31 +1,47 @@
 module.exports = {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "type": "array",
+    "type": "object",
     "description": "A schema of jsFile document",
-    "items": {
-        "$ref": "#/definitions/items"
+    "properties": {
+        "content": {
+            "description": "Document content",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/items"
+            }
+        },
+        "styles": {
+            "description": "Document styles",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "selector": {
+                        "type": "string"
+                    },
+                    "properties": {
+                        "$ref": "#/definitions/styleProperties"
+                    }
+                },
+                "additionalProperties": false,
+                "required": [
+                    "selector",
+                    "properties"
+                ]
+            }
+        }
     },
+    "additionalProperties": false,
+    "required": [
+        "content",
+        "styles"
+    ],
     "definitions": {
         "items": {
             "type": "object",
             "properties": {
                 "style": {
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/itemProperties"
-                        },
-                        {
-                            "patternProperties": {
-                                "^(?!properties)[a-zA-Z]+$": {
-                                    "type": [
-                                        "string",
-                                        "number",
-                                        "object"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
+                    "$ref": "#/definitions/styleProperties"
                 },
                 "properties": {
                     "allOf": [
@@ -103,6 +119,24 @@ module.exports = {
                 }
             },
             "additionalProperties": false
+        },
+        "styleProperties": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/itemProperties"
+                },
+                {
+                    "patternProperties": {
+                        "^(?!properties)[a-zA-Z]+$": {
+                            "type": [
+                                "string",
+                                "number",
+                                "object"
+                            ]
+                        }
+                    }
+                }
+            ]
         }
     }
 };
