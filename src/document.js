@@ -3,6 +3,10 @@ module.exports = {
     "type": "object",
     "description": "A schema of jsFile document",
     "properties": {
+        "meta": {
+            "description": "Document information",
+            "type": "object"
+        },
         "content": {
             "description": "Document content",
             "type": "array",
@@ -33,6 +37,7 @@ module.exports = {
     },
     "additionalProperties": false,
     "required": [
+        "meta",
         "content",
         "styles"
     ],
